@@ -4,8 +4,8 @@
 
 //Creating an array with 100 random values between 0 and 100
 let array = [];
-for (let i = 0; i <= 10; i++) {
-  array.push(Math.floor(Math.random() * 101));
+for (let i = 0; i <= 290; i++) {
+  array.push(Math.floor(Math.random() * (900 - 5 + 1) + 5));
 }
 
 //Function that is responsible for comparing the left and right arrays then returning the sortedarray
