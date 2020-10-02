@@ -4,7 +4,7 @@
 
 //Creating an array with 100 random values between 0 and 100
 let array = [];
-for (let i = 0; i <= 290; i++) {
+for (let i = 0; i <= 5; i++) {
   array.push(Math.floor(Math.random() * (900 - 5 + 1) + 5));
 }
 
@@ -19,9 +19,13 @@ function merge(left, right) {
     } else {
       sortedArray.push(right.shift());
     }
+    console.log(sortedArray);
   }
+
+  let result = [...sortedArray, ...left, ...right];
+  console.log(result);
   //Using the spread operator to concat the sorted elements, with the left and right arrays
-  return [...sortedArray, ...left, ...right];
+  return result;
 }
 
 //Main that takes an unsorted array as input and uses recursion to sort it in ascending order
@@ -35,6 +39,8 @@ function mergeSort(arr) {
   const middle = Math.floor(arr.length / 2);
   let left = arr.slice(0, middle);
   let right = arr.slice(middle);
+
+  console.log(left, right);
 
   //Return the sorted array from the merge function
   return merge(mergeSort(left), mergeSort(right));
