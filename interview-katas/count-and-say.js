@@ -2,10 +2,11 @@
 
 function countAndSay(n){
 
+    //for n === 1 return immediately '1'
     if (n === 1){
         return '1';
     }
-
+    
     let stringBuilder = "1";
     let output;
     for (let i = 0; i < n - 1; i ++){
