@@ -11,16 +11,16 @@ function countAndSay(n){
     for (let i = 0; i < n - 1; i ++){
         output = "";
         for (let j = 0; j < stringBuilder.length; j++){
-            if (stringBuilder[j] === '1'){
-                if (stringBuilder[j + 1] === '1'){
-                    output += "21";
-                    j++;
+            let count = 1;
+            for (let k = j + 1; k < stringBuilder.length; k++){
+                if (stringBuilder[k] === stringBuilder[j]){
+                    count++
                 } else {
-                    output += "11";
+                    break;
                 }
-            } else if (stringBuilder[j] === '2'){
-                output += "12"
             }
+            output += `${count}${stringBuilder[j]}`;
+            j += count - 1;
         }
         stringBuilder = output;
     }
